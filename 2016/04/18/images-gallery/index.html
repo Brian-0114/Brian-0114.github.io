@@ -6,9 +6,8 @@
   <title>How to design TinyURL | Brian Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="This is a classic System Design question. It relies the principle of SNAKE
+
 SNAKE Consists of 5 steps
-
-
 Scenario: case/interface
 Necessary: constrain/hypothesis
 Application : service/algorithm
@@ -18,20 +17,18 @@ Kilobit">
 <meta property="og:url" content="http://brianran.com/2016/04/18/images-gallery/index.html">
 <meta property="og:site_name" content="Brian Blog">
 <meta property="og:description" content="This is a classic System Design question. It relies the principle of SNAKE
+
 SNAKE Consists of 5 steps
-
-
 Scenario: case/interface
 Necessary: constrain/hypothesis
 Application : service/algorithm
 Kilobit">
-<meta property="og:updated_time" content="2016-04-19T17:30:25.000Z">
+<meta property="og:updated_time" content="2016-04-19T17:33:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to design TinyURL">
 <meta name="twitter:description" content="This is a classic System Design question. It relies the principle of SNAKE
+
 SNAKE Consists of 5 steps
-
-
 Scenario: case/interface
 Necessary: constrain/hypothesis
 Application : service/algorithm
@@ -285,9 +282,8 @@ Kilobit">
           
         <blockquote>
 <p>This is a classic System Design question. It relies the principle of SNAKE</p>
-<p>SNAKE Consists of 5 steps</p>
 </blockquote>
-<ul>
+<h3 id="SNAKE-Consists-of-5-steps"><a href="#SNAKE-Consists-of-5-steps" class="headerlink" title="SNAKE Consists of 5 steps"></a>SNAKE Consists of 5 steps</h3><ul>
 <li>Scenario: case/interface</li>
 <li>Necessary: constrain/hypothesis</li>
 <li>Application : service/algorithm</li>
@@ -296,11 +292,10 @@ Kilobit">
 </ul>
 <blockquote>
 <p>Let look deeper into each step</p>
-<p>Scenario</p>
-<pre><code>* short_url Insert(long_url)
+</blockquote>
+<h3 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h3><pre><code>* short_url Insert(long_url)
 * long_url lookup(short_url)
-</code></pre><p>What is the Necessary?</p>
-<pre><code>* Daily Active Users
+</code></pre><h3 id="What-is-the-Necessary"><a href="#What-is-the-Necessary" class="headerlink" title="What is the Necessary?"></a>What is the Necessary?</h3><pre><code>* Daily Active Users
     * 1,000,000
 * Insert 
     * per day : 1,000,000 * 1% (function usage) * 10(function frequency) = 100,000
@@ -309,10 +304,8 @@ Kilobit">
 * lookup
    * per day : 1000000 * 100% * 3 =  3000000
    * per second : 3000000/86400 = 35
-</code></pre><p>What is the algorithm?</p>
-<pre><code>*       
-</code></pre></blockquote>
-
+</code></pre><h3 id="What-is-the-algorithm"><a href="#What-is-the-algorithm" class="headerlink" title="What is the algorithm?"></a>What is the algorithm?</h3><pre><code>*       
+</code></pre>
       
     </div>
     
@@ -323,7 +316,7 @@ Kilobit">
         <p><span>本文标题:</span><a href="/2016/04/18/images-gallery/">How to design TinyURL</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">BOYU RAN</a></p>
         <p><span>发布时间:</span>2016-04-18, 23:26:33</p>
-        <p><span>最后更新:</span>2016-04-19, 10:30:25</p>
+        <p><span>最后更新:</span>2016-04-19, 10:33:04</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/04/18/images-gallery/" title="How to design TinyURL">http://brianran.com/2016/04/18/images-gallery/</a>
             <span class="copy-path" data-clipboard-text="原文: http://brianran.com/2016/04/18/images-gallery/　　作者: BOYU RAN" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -352,7 +345,7 @@ Kilobit">
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SNAKE-Consists-of-5-steps"><span class="toc-number">1.</span> <span class="toc-text">SNAKE Consists of 5 steps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scenario"><span class="toc-number">2.</span> <span class="toc-text">Scenario</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-Necessary"><span class="toc-number">3.</span> <span class="toc-text">What is the Necessary?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-the-algorithm"><span class="toc-number">4.</span> <span class="toc-text">What is the algorithm?</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
