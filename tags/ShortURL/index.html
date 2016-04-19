@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Brian Blog</title>
+  <title>Tag: ShortURL | Brian Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Brian Blog">
-<meta property="og:url" content="http://brianran.com/index.html">
+<meta property="og:url" content="http://brianran.com/tags/ShortURL/index.html">
 <meta property="og:site_name" content="Brian Blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -30,13 +30,8 @@
   
   <link rel="stylesheet" href="/css/style.css">
   
-      <style> .article { opacity: 0;} </style>
-  
   <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
   
   
       <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
@@ -47,10 +42,10 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
+          isHome: false,
           isPost: false,
           isArchive: false,
-          isTag: false,
+          isTag: true,
           isCategory: false,
           open_in_new: false,
           fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -234,219 +229,52 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-images-gallery" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/04/19/images-gallery/" class="article-date">
-      <time datetime="2016-04-20T06:26:33.000Z" itemprop="datePublished">2016-04-19</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2016/04/19/images-gallery/" class="archive-article-date">
+      <time datetime="2016-04-20T06:26:33.000Z" itemprop="datePublished">04-19</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/19/images-gallery/">How to design TinyURL</a>
+      <a class="archive-article-title" href="/2016/04/19/images-gallery/">How to design TinyURL</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <blockquote>
-<p>This is a classic System Design question. It relies the principle of SNAKE</p>
-</blockquote>
-<h3 id="SNAKE-Consists-of-5-steps"><a href="#SNAKE-Consists-of-5-steps" class="headerlink" title="SNAKE Consists of 5 steps"></a>SNAKE Consists of 5 steps</h3><ul>
-<li>Scenario: case/interface</li>
-<li>Necessary: constrain/hypothesis</li>
-<li>Application : service/algorithm</li>
-<li>Kilobit : data</li>
-<li>Evolve</li>
-</ul>
-<blockquote>
-<p>Let look deeper into each step</p>
-</blockquote>
-<h3 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h3><ul>
-<li>short_url Insert(long_url)</li>
-<li>long_url lookup(short_url)</li>
-</ul>
-<h3 id="What-is-the-Necessary"><a href="#What-is-the-Necessary" class="headerlink" title="What is the Necessary?"></a>What is the Necessary?</h3><ul>
-<li>Daily Active Users<ul>
-<li>1,000,000</li>
-</ul>
-</li>
-<li>Insert <ul>
-<li>per day : 1,000,000 <em> 1% (function usage) </em> 10(function frequency) = 100,000</li>
-<li>per year : 100,000 * 365 = 36500000</li>
-<li>per second 100,,000/86400 = 1.2</li>
-</ul>
-</li>
-<li>lookup<ul>
-<li>per day : 1000000 <em> 100% </em> 3 =  3000000</li>
-<li>per second : 3000000/86400 = 35</li>
-</ul>
-</li>
-</ul>
-<h3 id="What-is-the-algorithm"><a href="#What-is-the-algorithm" class="headerlink" title="What is the algorithm?"></a>What is the algorithm?</h3><ul>
-<li>Insert </li>
-</ul>
-<pre><code class="cpp">class Shortener{
-    map&lt;string,string&gt; mLongToShort
-    map&lt;string,string&gt; mShortToLong
 
-    string Insert(string longURL){
-        if(mLongToShort.find(longURL)==NULL)
-            string shortURL = GenerateShortURL();
-            mLongToShort[longURL] = shortURL;
-            mShortToLong[shortURL] = longURL;
-        return mLongToShort[longURL];
-    }
-
-    string GenerateShortURL()
-        return ConvertTo62(mLongToShort.size());
-
-    String ConvertTo62(int number){
-        char Encode[62] = {'0',...,'9','a',...'z','A',...'Z'};
-        string ret = "";
-        while(number){
-            ret = Enode[number%62] + ret;
-            number / = 62;
-        }
-        return ret;
-    }
-}
-</code></pre>
-<ul>
-<li>how to reduce the size of ShortURL?</li>
-</ul>
-<p><img src="images/selection_of_characters.png" alt=""></p>
-<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><ul>
-<li>Average Size of longURL = 100bytes</li>
-<li>Average size of shortURL = 4 bytes (int)</li>
-<li>State = 4 bytes</li>
-<li>Daily new URL = 100,000 * 108 = 10.84 MB</li>
-<li>Year new URL = 10.84 * 365 = 4 GB</li>
-</ul>
-<h3 id="Evolve"><a href="#Evolve" class="headerlink" title="Evolve"></a>Evolve</h3><ul>
-<li>How to Support random?<ul>
-<li>Random(0,range)</li>
-</ul>
-</li>
-<li>How to avoid conflicting?<ul>
-<li>try again</li>
-</ul>
-</li>
-<li>How to implement time-limited service?<ul>
-<li>Expire/state</li>
-</ul>
-</li>
-<li>How to cache?<ul>
-<li>pre-load</li>
-<li>replacement (LRU)</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
+          
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SNAKE/">SNAKE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ShortURL/">ShortURL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/System-Design/">System Design</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/04/18/hello-world/" class="article-date">
-      <time datetime="2016-04-19T03:58:59.000Z" itemprop="datePublished">2016-04-18</time>
-</a>
-    </div>
+    </div></section>
   
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/18/hello-world/">Hello World</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
     <div class="outer">
