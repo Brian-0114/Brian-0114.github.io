@@ -251,7 +251,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/18/images-gallery/">images gallery</a>
+      <a class="article-title" href="/2016/04/18/images-gallery/">How to design TinyURL</a>
     </h1>
   
 
@@ -261,10 +261,35 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><img src="/images/Landscape_2.jpg" alt=""></p>
-<blockquote>
-<p>Hi, this is my first post!!!!</p>
+        <blockquote>
+<p>This is a classic System Design question. It relies the principle of SNAKE</p>
+<p>SNAKE Consists of 5 steps</p>
 </blockquote>
+<ul>
+<li>Scenario: case/interface</li>
+<li>Necessary: constrain/hypothesis</li>
+<li>Application : service/algorithm</li>
+<li>Kilobit : data</li>
+<li>Evolve</li>
+</ul>
+<blockquote>
+<p>Let look deeper into each step</p>
+<p>Scenario</p>
+<pre><code>* short_url Insert(long_url)
+* long_url lookup(short_url)
+</code></pre><p>What is the Necessary?</p>
+<pre><code>* Daily Active Users
+    * 1,000,000
+* Insert 
+    * per day : 1,000,000 * 1% (function usage) * 10(function frequency) = 100,000
+    * per year : 100,000 * 365 = 36500000
+    * per second 100,,000/86400 = 1.2
+* lookup
+   * per day : 1000000 * 100% * 3 =  3000000
+   * per second : 3000000/86400 = 35
+</code></pre><p>What is the algorithm?</p>
+<pre><code>*       
+</code></pre></blockquote>
 
       
     </div>
