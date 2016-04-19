@@ -23,7 +23,7 @@ Scenario: case/interface
 Necessary: constrain/hypothesis
 Application : service/algorithm
 Kilobit">
-<meta property="og:updated_time" content="2016-04-19T17:37:17.000Z">
+<meta property="og:updated_time" content="2016-04-19T17:48:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to design TinyURL">
 <meta name="twitter:description" content="This is a classic System Design question. It relies the principle of SNAKE
@@ -315,8 +315,28 @@ Kilobit">
 </li>
 </ul>
 <h3 id="What-is-the-algorithm"><a href="#What-is-the-algorithm" class="headerlink" title="What is the algorithm?"></a>What is the algorithm?</h3><ul>
-<li></li>
+<li>Insert </li>
 </ul>
+<pre><code class="C++">class Shortener{
+    map&lt;string,string&gt; mLongToShort
+    map&lt;string,string&gt; mShortToLong
+
+    string Insert(string longURL){
+        if(mLongToShort.find(longURL)==NULL)
+            string shortURL = GenerateShortURL();
+            mLongToShort[longURL] = shortURL;
+            mShortToLong[shortURL] = longURL;
+        return mLongToShort[longURL];
+    }
+
+    string GenerateShortURL()
+        return string(mLongToShort.size());
+}
+</code></pre>
+<ul>
+<li>how to reduce the size of ShortURL?</li>
+</ul>
+<p>![]{images/selection_of_characters.png}</p>
 
       
     </div>
@@ -328,7 +348,7 @@ Kilobit">
         <p><span>本文标题:</span><a href="/2016/04/18/images-gallery/">How to design TinyURL</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">BOYU RAN</a></p>
         <p><span>发布时间:</span>2016-04-18, 23:26:33</p>
-        <p><span>最后更新:</span>2016-04-19, 10:37:17</p>
+        <p><span>最后更新:</span>2016-04-19, 10:48:51</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/04/18/images-gallery/" title="How to design TinyURL">http://brianran.com/2016/04/18/images-gallery/</a>
             <span class="copy-path" data-clipboard-text="原文: http://brianran.com/2016/04/18/images-gallery/　　作者: BOYU RAN" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -296,8 +296,28 @@
 </li>
 </ul>
 <h3 id="What-is-the-algorithm"><a href="#What-is-the-algorithm" class="headerlink" title="What is the algorithm?"></a>What is the algorithm?</h3><ul>
-<li></li>
+<li>Insert </li>
 </ul>
+<pre><code class="C++">class Shortener{
+    map&lt;string,string&gt; mLongToShort
+    map&lt;string,string&gt; mShortToLong
+
+    string Insert(string longURL){
+        if(mLongToShort.find(longURL)==NULL)
+            string shortURL = GenerateShortURL();
+            mLongToShort[longURL] = shortURL;
+            mShortToLong[shortURL] = longURL;
+        return mLongToShort[longURL];
+    }
+
+    string GenerateShortURL()
+        return string(mLongToShort.size());
+}
+</code></pre>
+<ul>
+<li>how to reduce the size of ShortURL?</li>
+</ul>
+<p>![]{images/selection_of_characters.png}</p>
 
       
     </div>
