@@ -237,8 +237,8 @@
     <article id="post-images-gallery" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/18/images-gallery/" class="article-date">
-      <time datetime="2016-04-19T06:26:33.000Z" itemprop="datePublished">2016-04-18</time>
+      <a href="/2016/04/19/images-gallery/" class="article-date">
+      <time datetime="2016-04-20T06:26:33.000Z" itemprop="datePublished">2016-04-19</time>
 </a>
     </div>
   
@@ -251,7 +251,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/18/images-gallery/">How to design TinyURL</a>
+      <a class="article-title" href="/2016/04/19/images-gallery/">How to design TinyURL</a>
     </h1>
   
 
@@ -311,13 +311,49 @@
     }
 
     string GenerateShortURL()
-        return string(mLongToShort.size());
+        return ConvertTo62(mLongToShort.size());
+
+    String ConvertTo62(int number){
+        char Encode[62] = {'0',...,'9','a',...'z','A',...'Z'};
+        string ret = "";
+        while(number){
+            ret = Enode[number%62] + ret;
+            number / = 62;
+        }
+        return ret;
+    }
 }
 </code></pre>
 <ul>
 <li>how to reduce the size of ShortURL?</li>
 </ul>
 <p><img src="images/selection_of_characters.png" alt=""></p>
+<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><ul>
+<li>Average Size of longURL = 100bytes</li>
+<li>Average size of shortURL = 4 bytes (int)</li>
+<li>State = 4 bytes</li>
+<li>Daily new URL = 100,000 * 108 = 10.84 MB</li>
+<li>Year new URL = 10.84 * 365 = 4 GB</li>
+</ul>
+<h3 id="Evolve"><a href="#Evolve" class="headerlink" title="Evolve"></a>Evolve</h3><ul>
+<li>How to Support random?<ul>
+<li>Random(0,range)</li>
+</ul>
+</li>
+<li>How to avoid conflicting?<ul>
+<li>try again</li>
+</ul>
+</li>
+<li>How to implement time-limited service?<ul>
+<li>Expire/state</li>
+</ul>
+</li>
+<li>How to cache?<ul>
+<li>pre-load</li>
+<li>replacement (LRU)</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
