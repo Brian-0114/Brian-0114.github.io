@@ -271,29 +271,21 @@
 <h3 id="crawl-a-page-in-Python"><a href="#crawl-a-page-in-Python" class="headerlink" title="crawl a page in Python"></a>crawl a page in Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Request source file</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://yue.ifeng.com/'</span></span><br><span class="line">request = urllib2.Request(url)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line">page = response.read()</span><br></pre></td></tr></table></figure>
 <h3 id="What-is-the-network-process-when-you-crawl-a-web-page"><a href="#What-is-the-network-process-when-you-crawl-a-web-page" class="headerlink" title="What is the network process when you crawl a web page"></a>What is the network process when you crawl a web page</h3><ul>
 <li>Crawler : Socket() -&gt; connect() -&gt; read() , write() -&gt; close()</li>
-<li><p>Web server: Socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; read(), write() -&gt; close()</p>
-</li>
-<li><p>3 steps handshake : SYN, SYN-ACK, ACK</p>
-</li>
-<li>Layers: Application layer -&gt; FTP, HTTP, DNS , Abstract layer -&gt; Socket, Transport Layer -&gt; TCP, UDP<pre><code>Network layer -&gt; IP, Link layer -&gt; Hardware Interface
-</code></pre></li>
+<li>Web server: Socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; read(), write() -&gt; close()</li>
+<li>3 steps handshake : SYN, SYN-ACK, ACK</li>
+<li>Layers: Application layer -&gt; FTP, HTTP, DNS , Abstract layer -&gt; Socket, Transport Layer -&gt; TCP, UDP Network layer -&gt; IP, Link layer -&gt; Hardware Interface</li>
 </ul>
 <blockquote>
 <p>What is HTML?</p>
 </blockquote>
 <ul>
-<li><p>HTML uses a tree to represent a human</p>
-</li>
-<li><p>crawl all the news from <a href="http://yue.ifeng.com" target="_blank" rel="external">http://yue.ifeng.com</a></p>
-</li>
-<li><p>List crawler -&gt; Links of news -&gt; news crawlers -&gt; pages of news</p>
-</li>
+<li>HTML uses a tree to represent a human</li>
+<li>crawl all the news from <a href="http://yue.ifeng.com" target="_blank" rel="external">http://yue.ifeng.com</a></li>
+<li>List crawler -&gt; Links of news -&gt; news crawlers -&gt; pages of news</li>
 </ul>
 <h3 id="crawl-from-more-websites"><a href="#crawl-from-more-websites" class="headerlink" title="crawl from more websites"></a>crawl from more websites</h3><ul>
-<li><p>generic crawler -&gt; scheduler -&gt; pages of news    </p>
-</li>
-<li><p>scheduler -&gt; taskTable </p>
-</li>
+<li>generic crawler -&gt; scheduler -&gt; pages of news    </li>
+<li>scheduler -&gt; taskTable </li>
 </ul>
 <p><img src="images/crawler_archtecture.png" alt=""></p>
 
