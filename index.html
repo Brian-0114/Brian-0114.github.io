@@ -234,6 +234,94 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-How-to-Design-Crawler" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/28/How-to-Design-Crawler/" class="article-date">
+      <time datetime="2016-04-29T04:51:34.000Z" itemprop="datePublished">2016-04-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/28/How-to-Design-Crawler/">How to Design Crawler</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="5-steps"><a href="#5-steps" class="headerlink" title="5 steps"></a>5 steps</h3><ul>
+<li>Web Pages</li>
+<li>Information Collection</li>
+<li>Database</li>
+<li>Information Retrieval</li>
+<li>Rank Search Recommend</li>
+</ul>
+<h3 id="crawl-a-page-in-Python"><a href="#crawl-a-page-in-Python" class="headerlink" title="crawl a page in Python"></a>crawl a page in Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Request source file</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://yue.ifeng.com/'</span></span><br><span class="line">request = urllib2.Request(url)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line">page = response.read()</span><br></pre></td></tr></table></figure>
+<h3 id="What-is-the-network-process-when-you-crawl-a-web-page"><a href="#What-is-the-network-process-when-you-crawl-a-web-page" class="headerlink" title="What is the network process when you crawl a web page"></a>What is the network process when you crawl a web page</h3><ul>
+<li>Crawler : Socket() -&gt; connect() -&gt; read() , write() -&gt; close()</li>
+<li><p>Web server: Socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; read(), write() -&gt; close()</p>
+</li>
+<li><p>3 steps handshake : SYN, SYN-ACK, ACK</p>
+</li>
+<li>Layers: Application layer -&gt; FTP, HTTP, DNS , Abstract layer -&gt; Socket, Transport Layer -&gt; TCP, UDP<pre><code>Network layer -&gt; IP, Link layer -&gt; Hardware Interface
+</code></pre></li>
+</ul>
+<blockquote>
+<p>What is HTML?</p>
+</blockquote>
+<ul>
+<li><p>HTML uses a tree to represent a human</p>
+</li>
+<li><p>crawl all the news from <a href="http://yue.ifeng.com" target="_blank" rel="external">http://yue.ifeng.com</a></p>
+</li>
+<li><p>List crawler -&gt; Links of news -&gt; news crawlers -&gt; pages of news</p>
+</li>
+</ul>
+<h3 id="crawl-from-more-websites"><a href="#crawl-from-more-websites" class="headerlink" title="crawl from more websites"></a>crawl from more websites</h3><ul>
+<li><p>generic crawler -&gt; scheduler -&gt; pages of news    </p>
+</li>
+<li><p>scheduler -&gt; taskTable </p>
+</li>
+</ul>
+<p><img src="images/crawler_archtecture.png" alt=""></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-images-gallery" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
